@@ -15,7 +15,7 @@ export default function App() {
           <h1 class="text-3xl font-bold text-left">Noé Kurata</h1>
           <p class="text-left">Developer | <a href="mailto:noe.kurata@epitech.eu">noe.kurata@epitech.eu</a> | +33 7 81 98 09 01</p>
         </div>
-        <img src="headshot.jpg" alt="Description" class="absolute top-10 right-20 w-36 h-36 rounded-lg" />
+        <img src="/public/headshot.jpg" alt="Description" class="absolute top-10 right-20 w-36 h-36 rounded-lg" />
       </div>
       <div class="p-6">
           <h2 class="text-2xl font-bold  mb-4 text-left">About Me</h2>
