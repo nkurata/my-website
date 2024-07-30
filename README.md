@@ -1,5 +1,5 @@
 
-<img width="1417" alt="NoeKurata_Resume" src="https://github.com/user-attachments/assets/89490a9b-c615-46ed-9b07-c70d65c9cb40">
+<href https://designedbynoe.fr>
 
 # Resume Application
 
