@@ -12,7 +12,7 @@ export default function App() {
     <>
       <div class="flex p-6 items-center">
         <div class="flex-1">
-          <h1 class="text-3xl font-bold text-left">Noé Kurata</h1>
+          <h1 class="text-3xl text-black font-bold text-left"><a href="https://www.linkedin.com/in/noekurata/">Noé Kurata</a></h1>
           <p class="text-left">Developer | <a href="mailto:noe.kurata@epitech.eu">noe.kurata@epitech.eu</a> | +33 7 81 98 09 01</p>
         </div>
         <img src="/public/headshot.jpg" alt="Description" class="absolute top-10 right-20 w-36 h-36 rounded-lg" />
