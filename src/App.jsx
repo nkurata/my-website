@@ -1,9 +1,24 @@
 import './App.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function App() {
   const [hoveredCompany, setHoveredCompany] = useState(null);
-  const [isDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    setIsDarkMode(mediaQuery.matches);
+
+    const handleChange = (e) => {
+      setIsDarkMode(e.matches);
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+
+    return () => {
+      mediaQuery.removeEventListener('change', handleChange);
+    };
+  }, []);
 
   const handleMouseEnter = (company) => {
     setHoveredCompany(company);
@@ -19,10 +34,10 @@ export default function App() {
         <div className="flex-1">
           <h1 className="text-3xl font-bold text-left">
             Noé Kurata&nbsp;
-            <a href="https://www.linkedin.com/in/noekurata/">
+            <a href="https://www.linkedin.com/in/noekurata/" className="black-link ml-2">
               <i className="fab fa-linkedin fa-lg"></i>
             </a>
-            <a href="https://github.com/noekurata" className="black-link ml-2">
+            <a href="https://github.com/nkurata" className="black-link ml-2">
               <i className="fab fa-github fa-lg"></i>
             </a>
           </h1>
@@ -57,7 +72,7 @@ export default function App() {
             <p>Freelance Web development & Video +<br />Graphic production</p>
             <p className="text-gray-400">Jun 2020 - Present</p>
             {hoveredCompany === 'ACT Responsible' && (
-              <div className="hover-info absolute bg-white border p-4 shadow-lg">
+              <div className="hover-info border p-4 rounded-lg">
                 <p>ACT Responsible is a non-profit organization promoting responsible communication for sustainable development through various initiatives and campaigns.</p>
               </div>
             )}
@@ -73,7 +88,7 @@ export default function App() {
             <p>Technical Support Intern</p>
             <p className="text-gray-400">Aug 2023 - Dec 2023</p>
             {hoveredCompany === 'Adforum' && (
-              <div className="hover-info absolute bg-white border p-4 shadow-lg">
+              <div className="hover-info border p-4 rounded-lg shadow-lg">
                 <p>Adforum is a global advertising database and creative library, providing insights and resources for the advertising industry.</p>
               </div>
             )}
@@ -89,7 +104,7 @@ export default function App() {
             <p>Graphic Designer</p>
             <p className="text-gray-400">Feb 2019</p>
             {hoveredCompany === 'Conceptory' && (
-              <div className="hover-info absolute bg-white border p-4 shadow-lg">
+              <div className="hover-info border p-4 rounded-lg shadow-lg">
                 <p>Conceptory is a creative agency specializing in graphic design, branding, and digital marketing solutions.</p>
               </div>
             )}

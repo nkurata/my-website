@@ -14,6 +14,7 @@
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -35,6 +36,7 @@
 
 .card {
   padding: 2em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .read-the-docs {
@@ -72,8 +74,21 @@ img.headshot {
   color: grey;
 }
 
-.black-link {
+.hover-info {
+  z-index: 1000;
+  position: absolute;
+  background-color: white;
   color: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .hover-info {
+  background-color: #242424;
+  color: white;
+}
+
+.black-link {
+  color: #242424;
 }
 
 .dark-mode .black-link {
