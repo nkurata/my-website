@@ -78,3 +78,7 @@ button:focus-visible {
 a:hover-black {
   color: black;
 }
+
+.flex {
+  padding-bottom: 0%;
+}

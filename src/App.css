@@ -1,90 +1,18 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-.flex {
-  display: flex;
-  align-items: center;
-}
-
-.flex-1 {
-  flex: 1;
-}
-
-img {
-  margin-right: 10px;
-}
-
-img.headshot {
-  margin-left: 20px;
-  margin-right: 20px;
-  float: right;
-}
-
-.text-justify {
-  text-align: justify;
-}
-
-.hover-info {
-  z-index: 1000;
+.headshot {
+  width: 150px;
+  height: 150px;
+  border-radius: 15%;
 }
 
 .grey-link {
   color: grey;
-}
-
-.hover-info {
-  z-index: 1000;
-  position: absolute;
-  background-color: white;
-  color: black;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.dark-mode .hover-info {
-  background-color: #242424;
-  color: white;
 }
 
 .black-link {
@@ -93,4 +21,20 @@ img.headshot {
 
 .dark-mode .black-link {
   color: white;
+}
+
+.hover-info {
+  z-index: 1;
+  position: absolute;
+  background-color: white;
+  border-color: #242424;
+  left: 80%;
+  top: 0;
+  width: 500px;
+}
+
+.dark-mode .hover-info {
+  background-color: #242424;
+  border-color: grey;
+  color: 242424;
 }
