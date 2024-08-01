@@ -1,5 +1,5 @@
 
-Deployed at: https://designedbynoe.fr
+Deployed at: noekurata.com
 
 # Resume Application
 
