@@ -1,5 +1,5 @@
 
-Deployed at: noekurata.com
+Deployed at: http://noekurata.com
 
 # Resume Application
 
