@@ -1,7 +1,9 @@
 import './App.css'
+import Loader from './Loader.jsx';
 import { useState, useEffect } from 'react';
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const [hoveredCompany, setHoveredCompany] = useState(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -20,6 +22,13 @@ export default function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleMouseEnter = (company) => {
     setHoveredCompany(company);
   };
@@ -27,6 +36,10 @@ export default function App() {
   const handleMouseLeave = () => {
     setHoveredCompany(null);
   };
+
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <div className={isDarkMode ? 'dark-mode' : ''}>
