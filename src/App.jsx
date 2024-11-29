@@ -57,7 +57,7 @@ export default function App() {
           <p className="text-left"> Developer | <a href="mailto:noe.kurata@epitech.eu" className="grey-link">noe.kurata@epitech.eu</a> | +33 7 81 98 09 01</p>
         </div>
         <img
-          src="https://media.licdn.com/dms/image/D4E03AQFWvF-_J7A0ZA/profile-displayphoto-shrink_800_800/0/1693472370693?e=1727913600&v=beta&t=eUVC24rD45tgfNEgtYbOasIMgfhSOWhfRpKp-in_e3g"
+          src="https://avatars.githubusercontent.com/u/90001579?v=4"
           className="headshot"
         />
       </div>
