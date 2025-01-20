@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -15,6 +17,13 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
 }
 
 a {
@@ -81,4 +90,47 @@ a:hover-black {
 
 .flex {
   padding-bottom: 0%;
+}
+
+img:hover {
+  filter: brightness(0.8);
+}
+
+i:hover {
+  color: #3b82f6;
+}
+
+.page-title {
+  margin-top: 20vh;
+  font-size: 2.5em;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #242424;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3b82f6;
+  border-radius: 10px;
+  border: 3px solid #242424;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #1e40af;
+}
+
+@media (prefers-color-scheme: light) {
+  ::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border: 3px solid #ffffff;
+  }
 }

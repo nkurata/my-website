@@ -1,9 +1,7 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 1rem;
-  text-align: center;
+body, .dark-mode {
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
+
 
 .headshot {
   width: 150px;
@@ -31,10 +29,11 @@
   left: 80%;
   top: 0;
   width: 250px;
+  color: #242424;
 }
 
 .dark-mode .hover-info {
   background-color: #242424;
   border-color: grey;
-  color: 242424;
+  color: white;
 }
