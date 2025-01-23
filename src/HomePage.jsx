@@ -17,27 +17,6 @@ const tools = [
   { id: 12, title: 'Notion', image: 'https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png' },
 ];
 
-const techno = [
-  { id: 1, title: 'C', image: 'https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png' },
-  { id: 2, title: 'C++', image: 'https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg' },
-  { id: 3, title: 'C#', image: 'https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png' },
-  { id: 4, title: 'Assembly', image: 'https://static-00.iconduck.com/assets.00/assembly-icon-2048x2048-wspx42mf.png' },
-  { id: 5, title: 'HTML', image: 'https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg' },
-  { id: 6, title: 'CSS', image: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg' },
-  { id: 7, title: 'JavaScript', image: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png' },
-  { id: 8, title: 'Python', image: 'https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg' },
-  { id: 9, title: 'Haskell', image: 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Haskell-Logo.svg' },
-  { id: 10, title: 'PHP', image: 'https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg' },
-  { id: 11, title: 'SQL', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Sql_data_base_with_logo.svg/2560px-Sql_data_base_with_logo.svg.png' },
-  { id: 12, title: 'MySQL', image: 'https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg' },
-  { id: 13, title: 'Node.js', image: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg' },
-  { id: 14, title: 'React', image: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg' },
-  { id: 15, title: 'Flutter', image: 'https://storage.googleapis.com/cms-storage-bucket/0dbfcc7a59cd1cf16282.png' },
-  { id: 16, title: 'TailwindCSS', image: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg' },
-  { id: 17, title: 'Laravel', image: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg' },
-  { id: 18, title: '.NET', image: 'https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg' },
-];
-
 const HomePage = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [navHidden, setNavHidden] = useState(false);
@@ -75,39 +54,45 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className={isDarkMode ? 'dark-mode' : ''}>
-      <NavBar isDarkMode={isDarkMode} hidden={navHidden} />
-      <div className="home-container">
-        <div className="intro">
-          <h1 className="intro-title">Hi 👋, I'm Noé Kurata</h1>
-          <h3 className="intro-subtitle">
-            <strong>Computer Science Student & Digital Designer</strong>
-          </h3>
-        </div>
-        <div className="tools">
-          <h1 className="tools-title">Tool I Use</h1>
-          <div className="card-list">
-            {tools.map(tool => (
-              <div key={tool.id} className="card-item">
-                <img src={tool.image} alt={tool.title} className="card-image" />
-                <p className="card-text">{tool.title}</p>
-              </div>
-            ))}
+      <div className={isDarkMode ? 'dark-mode' : ''}>
+        <NavBar isDarkMode={isDarkMode} hidden={navHidden} />
+        <div className="home-container">
+          <div className="intro">
+            <h1 className="intro-title">Hi 👋, I'm Noé Kurata</h1>
+            <h3 className="intro-subtitle">
+              <strong>Computer Science Student & Digital Designer</strong>
+            </h3>
           </div>
-        </div>
-        <div className="techno">
-          <h1 className="techno-title">Technologies I've learnt</h1>
-          <div className="card-list">
-            {techno.map(tech => (
-              <div key={tech.id} className="card-item">
-                <img src={tech.image} alt={tech.title} className="card-image" />
-                <p className="card-text">{tech.title}</p>
-              </div>
-            ))}
+          <div className="about flex">
+            <div className="about-content flex-1">
+              <h1 className="about-title">About Me</h1>
+              <ul className="about-text">
+                <li>I'm a Digital Designer passionate about technology and design.</li>
+                <li>I'm currently learning C++ Game Development.</li>
+                <li>And in my freetime learning Full-Stack Web Development.</li>
+                <li>I desire to create impactful digital experiences.</li>
+              </ul>
+            </div>
+            <div className="about-image">
+              <img
+                  src="https://avatars.githubusercontent.com/u/90001579?v=4"
+                  className="headshot"
+              />
+            </div>
+          </div>
+          <div className="tools">
+            <h1 className="tools-title">Tools I Use</h1>
+            <div className="card-list">
+              {tools.map(tool => (
+                  <div key={tool.id} className="card-item">
+                    <img src={tool.image} alt={tool.title} className="card-image" />
+                    <p className="card-text">{tool.title}</p>
+                  </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

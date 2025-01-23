@@ -70,7 +70,7 @@ export default function ResumpePage() {
   return (
     <div className={isDarkMode ? 'dark-mode' : ''}>
       <NavBar isDarkMode={isDarkMode} hidden={navHidden} />
-      <div className="pt-24 mx-40 mt-10"> {}
+      <div className="pt-24 mx-4 sm:mx-10 md:mx-20 lg:mx-40 mt-10"> {}
         <div className="flex p-6 items-center">
           <div className="flex-1">
             <h1 className="text-3xl font-bold text-left">
@@ -93,8 +93,8 @@ export default function ResumpePage() {
             </p>
           </div>
         </div>
-        <div className="flex justify-center items-stretch">
-          <div className="w-1/3 p-6">
+        <div className="flex flex-col lg:flex-row justify-center items-stretch">
+          <div className="w-full lg:w-1/3 p-6">
             <h2 className="text-2xl font-bold mb-1 text-left">Skills</h2>
             <ul className="list-disc list-inside text-left">
               <li>Languages: C, C++, Python, Haskell, PHP, SQL</li>
@@ -113,7 +113,7 @@ export default function ResumpePage() {
               <li>Problem Solving</li>
             </ul>
           </div>
-          <div className="w-1/3 p-6">
+          <div className="w-full lg:w-1/3 p-6">
             <h3 className="text-2xl mb-1 font-bold">Experience</h3>
             <div
               className="relative"
@@ -169,7 +169,7 @@ export default function ResumpePage() {
               )}
             </div>
           </div>
-          <div className="w-1/3 p-6">
+          <div className="w-full lg:w-1/3 p-6">
             <h2 className="text-2xl font-bold mb-1">Education</h2>
             <h3 className="text-xl">
               <a href="https://www.epitech.eu" className="underline">EPITECH</a>

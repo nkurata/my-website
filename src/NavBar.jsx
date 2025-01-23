@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './NavBar.css';
+import logo_black from '/assets/logo_dark.png';
+import logo_white from '/assets/logo_white.png';
 
 const NavBar = ({ isDarkMode, hidden }) => {
   const { pathname } = useLocation();
@@ -21,7 +23,7 @@ const NavBar = ({ isDarkMode, hidden }) => {
       <div className="flex items-center ml-4">
         <Link to="/">
           <img
-            src={isDarkMode ? 'assets/logo_white.png' : 'assets/logo_dark.png'}
+            src={isDarkMode ? logo_white : logo_black}
             className="logo h-24 text-white hover:text-blue-400"
           />
         </Link>
