@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from './HomePage.jsx';
-import ResumePage from './ResumePage.jsx';
-import CodePage from './CodePage.jsx';
-import VisualArtsPage from './VisualArtsPage.jsx';
+import HomePage from './pages/HomePage.jsx';
+import ResumePage from './pages/ResumePage.jsx';
+import CodePage from './pages/CodePage.jsx';
+import VisualArtsPage from './pages/VisualArtsPage.jsx';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(

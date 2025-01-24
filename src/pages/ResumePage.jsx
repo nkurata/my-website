@@ -1,6 +1,6 @@
-import './ResumePage.css';
-import Loader from './Loader.jsx';
-import NavBar from './NavBar.jsx';
+import '../styles/ResumePage.css';
+import Loader from '../components/Loader.jsx';
+import NavBar from '../components/NavBar.jsx';
 import { useState, useEffect } from 'react';
 
 export default function ResumpePage() {

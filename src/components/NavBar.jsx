@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import './NavBar.css';
-import logo_black from '/assets/logo_dark.png';
-import logo_white from '/assets/logo_white.png';
+import '../styles/NavBar.css';
+import logo_black from '../assets/logo_dark.png';
+import logo_white from '../assets/logo_white.png';
 
 const NavBar = ({ isDarkMode, hidden }) => {
   const { pathname } = useLocation();
