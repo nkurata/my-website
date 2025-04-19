@@ -9,14 +9,13 @@ const useLoader = () => {
     };
 
     if (document.readyState === 'complete') {
-      setIsLoading(false); // If the page is already loaded
+      setIsLoading(false);
     } else {
-      window.addEventListener('load', handleLoad); // Wait for the page to load
+      window.addEventListener('load', handleLoad);
     }
 
     return () => {
-      window.removeEventListener('load', handleLoad); // Cleanup the event listener
-    };
+      window.removeEventListener('load', handleLoad);
   }, []);
 
   return isLoading;
