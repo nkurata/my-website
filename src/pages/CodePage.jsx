@@ -6,46 +6,19 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { tech } from '../constants/tech.js';
 import { projects } from '../constants/codeprojects.js';
+// import { useLoader } from '../hooks/loader.js';
+import useNavBarVisibility from '../hooks/navbar.js';
+import useDarkMode from '../hooks/darkmode.js';
 
 projects.sort((a, b) => new Date(b.date.split(' - ')[0]) - new Date(a.date.split(' - ')[0]));
 
+
 const CodePage = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [navHidden, setNavHidden] = useState(false);
+  // const isLoading = useLoader();
+  const isDarkMode = useDarkMode();
+  const navHidden = useNavBarVisibility();
   const [selectedSkill, setSelectedSkill] = useState('');
   const [selectedTech, setSelectedTech] = useState('');
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    setIsDarkMode(mediaQuery.matches);
-
-    const handleChange = (e) => {
-      setIsDarkMode(e.matches);
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-
-    return () => {
-      mediaQuery.removeEventListener('change', handleChange);
-    };
-  }, []);
-
-  useEffect(() => {
-    let lastScrollY = window.scrollY;
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        setNavHidden(true);
-      } else {
-        setNavHidden(false);
-      }
-      lastScrollY = window.scrollY;
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   const settings = {
     dots: true,

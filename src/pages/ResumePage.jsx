@@ -2,58 +2,15 @@ import '../styles/ResumePage.css';
 import Loader from '../components/Loader.jsx';
 import NavBar from '../components/NavBar.jsx';
 import { useState, useEffect } from 'react';
+// import useLoader from '../hooks/loader.js';
+import useNavBarVisibility from '../hooks/navbar.js';
+import useDarkMode from '../hooks/darkmode.js';
 
 export default function ResumpePage() {
-  const [isLoading, setIsLoading] = useState(true);
+  // const isLoading = useLoader();
+  const isDarkMode = useDarkMode();
+  const navHidden = useNavBarVisibility();
   const [hoveredCompany, setHoveredCompany] = useState(null);
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [navHidden, setNavHidden] = useState(false);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    setIsDarkMode(mediaQuery.matches);
-
-    const handleChange = (e) => {
-      setIsDarkMode(e.matches);
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-
-    return () => {
-      mediaQuery.removeEventListener('change', handleChange);
-    };
-  }, []);
-
-  useEffect(() => {
-    function handleLoad() {
-      setIsLoading(false);
-    }
-    if (document.readyState === 'complete') {
-      setIsLoading(false);
-    } else {
-      window.addEventListener('load', handleLoad);
-    }
-    return () => {
-      window.removeEventListener('load', handleLoad);
-    };
-  }, []);
-
-  useEffect(() => {
-    let lastScrollY = window.scrollY;
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        setNavHidden(true);
-      } else {
-        setNavHidden(false);
-      }
-      lastScrollY = window.scrollY;
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   const handleMouseEnter = (company) => {
     setHoveredCompany(company);
@@ -62,10 +19,6 @@ export default function ResumpePage() {
   const handleMouseLeave = () => {
     setHoveredCompany(null);
   };
-
-  if (isLoading) {
-    return <Loader />;
-  }
 
   return (
     <div className={isDarkMode ? 'dark-mode' : ''}>

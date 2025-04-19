@@ -5,53 +5,19 @@ import '../styles/VisualArtsPage.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { projects } from '../constants/visprojects.js';
+// import { useLoader } from '../hooks/loader.js';
+import useNavBarVisibility from '../hooks/navbar.js';
+import useDarkMode from '../hooks/darkmode.js';
 
 const VisualArtsPage = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [navHidden, setNavHidden] = useState(false);
+  // const isLoading = useLoader();
+  const isDarkMode = useDarkMode();
+  const navHidden = useNavBarVisibility();
   const [selectedTag, setSelectedTag] = useState('');
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    setIsDarkMode(mediaQuery.matches);
-
-    const handleChange = (e) => {
-      setIsDarkMode(e.matches);
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-
-    return () => {
-      mediaQuery.removeEventListener('change', handleChange);
-    };
-  }, []);
-
-  useEffect(() => {
-    let lastScrollY = window.scrollY;
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        setNavHidden(true);
-      } else {
-        setNavHidden(false);
-      }
-      lastScrollY = window.scrollY;
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-
-
-  const filteredProjects = projects.filter((project) => {
-    return selectedTag ? project.tags.includes(selectedTag) : true;
-  });
 
   const settings = {
     dots: true,
-    infinite: filteredProjects.length > 1,
+    infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -63,7 +29,7 @@ const VisualArtsPage = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          infinite: filteredProjects.length > 1,
+          infinite: true,
           dots: true,
           centerPadding: '0',
         },
@@ -79,11 +45,15 @@ const VisualArtsPage = () => {
     ],
   };
 
+  const filteredProjects = projects.filter((project) => {
+    return selectedTag ? project.tags.includes(selectedTag) : true;
+  });
+
   return (
       <div className={isDarkMode ? 'dark-mode' : ''}>
         <NavBar isDarkMode={isDarkMode} hidden={navHidden} />
         <div className="visual-arts-container">
-          <h1 className="page-title">designedbynoe</h1>
+          <h1 className="page-title">designedbynoe.</h1>
           <div className="filters">
             <div className="filter-group">
               <label htmlFor="tag-filter">Filter by Tag:</label>
@@ -97,12 +67,11 @@ const VisualArtsPage = () => {
           </div>
           <Slider {...settings}>
             {filteredProjects.map((project, index) => (
-                <div key={index} className="project-card">
-                  <div className="video-container">
+                <div key={index} className="card border rounded-lg p-4 shadow-lg">
+                  <div className="relative pb-[100%] h-0 overflow-hidden max-w-full bg-black">
                     <iframe
                         src={project.videoSrc}
-                        width="100%"
-                        height="200"
+                        className="absolute top-0 left-0 w-full h-full"
                         frameBorder="0"
                         scrolling="no"
                         allowTransparency="true"

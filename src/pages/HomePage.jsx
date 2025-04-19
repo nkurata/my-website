@@ -2,42 +2,14 @@ import React, { useState, useEffect } from 'react';
 import NavBar from '../components/NavBar.jsx';
 import '../styles/HomePage.css';
 import { tools } from '../constants/tools.js';
+// import { useLoader } from '../hooks/loader.js';
+import useNavBarVisibility from '../hooks/navbar.js';
+import useDarkMode from '../hooks/darkmode.js';
 
 const HomePage = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [navHidden, setNavHidden] = useState(false);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    setIsDarkMode(mediaQuery.matches);
-
-    const handleChange = (e) => {
-      setIsDarkMode(e.matches);
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-
-    return () => {
-      mediaQuery.removeEventListener('change', handleChange);
-    };
-  }, []);
-
-  useEffect(() => {
-    let lastScrollY = window.scrollY;
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        setNavHidden(true);
-      } else {
-        setNavHidden(false);
-      }
-      lastScrollY = window.scrollY;
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  // const isLoading = useLoader();
+  const isDarkMode = useDarkMode();
+  const navHidden = useNavBarVisibility();
 
   return (
       <div className={isDarkMode ? 'dark-mode' : ''}>

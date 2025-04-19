@@ -78,13 +78,12 @@
   .icondiv {
     display: none;
   }
+  .icon {
+    display: none;
+  }
   .navbar-links {
     margin-left: 0;
     margin-right: 1rem;
-  }
-
-  .icon {
-    display: none;
   }
 }
 
