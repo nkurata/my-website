@@ -7,12 +7,14 @@ const useNavBarVisibility = () => {
     let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        setNavHidden(true);
-      } else {
-        setNavHidden(false);
-      }
-      lastScrollY = window.scrollY;
+        if (window.scrollY < 100) { // show nav when at the top
+            setNavHidden(false);
+        } else if (window.scrollY > lastScrollY) { // hide nav when scrolling down
+            setNavHidden(true);
+        } else {
+            setNavHidden(false);
+        }
+        lastScrollY = window.scrollY;
     };
 
     window.addEventListener('scroll', handleScroll);
