@@ -26,13 +26,13 @@ export const projects = [
     {
       title: 'ACT Care Awards 2023',
       description: 'Care Awards (ACT Responsible) Ceremony highlights',
-      videoSrc: 'https://www.youtube.com/embed/giSc_o4U2Zs',
+      videoSrc: 'https://youtu.be/6fQeLFeSI60?si=rDmAP1bjyb_k_K52',
       tags: ['Awards', 'Highlights', 'ACT'],
     },
     {
       title: 'ACT in Cannes 2023',
       description: 'Wrap up of the Cannes Festival.',
-      videoSrc: 'https://www.youtube.com/embed/giSc_o4U2Zs',
+      videoSrc: 'https://youtu.be/6fQeLFeSI60?si=rDmAP1bjyb_k_K52',
       tags: ['Cannes', 'Wrap Up', 'ACT'],
     },
   ];

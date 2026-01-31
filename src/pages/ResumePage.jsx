@@ -42,7 +42,7 @@ export default function ResumpePage() {
           <div className="flex-1">
             <h2 className="text-2xl font-bold mb-1 text-left">About Me</h2>
             <p className="text-justify text-left">
-              As a third-year student at EPITECH on the International Track, I'm currently studying a wide array of programming languages and technologies. My practical experience ranges from freelance web development and graphic production to internships in technical support, showcasing my versatility and ability to apply theoretical knowledge in real-world scenarios. Born and raised in France, I've attended both international and French public schools, helping me develop a strong foundation in both French and English. Additionally, I've spent a semester in Barcelona, enhancing my Spanish and honing my ability to quickly adapt to new environments. Furthermore, my travels across 26 countries has further refined these adaptive skills, enabling me to thrive in diverse cultural contexts. This combination of academic rigour, technical proficiency, and international exposure positions me uniquely to contribute to innovative projects, blending my technical skills with a creative and global mindset.
+              As a fourth-year student at EPITECH on the International Track and Junior Data Engineer at DEPT, I'm currently working on my Epitech Innovative Project Dissonance, a cross-platform desktop app that helps defend audio content from unauthorized use in AI training, while on an exchange program studying Software Engineering at Cardiff Metropolitan University. My practical experience ranges from an internship as a Data Engineer, freelance web development, and graphic production to internships in technical support, showcasing my versatility and ability to apply theoretical knowledge in real-world scenarios. Born and raised in France, I've attended both international and French public schools, helping me develop a strong foundation in both French and English. Additionally, I've spent a semester in Barcelona, 8 months in Berlin as part of my third year at EPITECH, and 4 months working in Amsterdam for DEPT last summer, honing my ability to quickly adapt to new environments. Furthermore, my travels across 26 countries have further refined these adaptive skills, enabling me to thrive in diverse cultural contexts. This combination of academic rigour, technical proficiency, and international exposure positions me uniquely to contribute to innovative projects, blending my technical skills with a creative and global mindset.
             </p>
           </div>
         </div>
@@ -68,6 +68,24 @@ export default function ResumpePage() {
           </div>
           <div className="w-full lg:w-1/3 p-6">
             <h3 className="text-2xl mb-1 font-bold">Experience</h3>
+            <div
+              className="relative"
+              onMouseEnter={() => handleMouseEnter('DEPT')}
+              onMouseLeave={handleMouseLeave}
+            >
+              <h5 className="text-xl">
+                <a href="https://www.deptagency.com/" className="underline">DEPT</a>
+              </h5>
+              <h7 className="text-gray-400">Remote & Amsterdam</h7>
+              <p>Junior Data Engineer</p>
+              <p className="text-gray-400">Apr 2025 - Present</p>
+              {hoveredCompany === 'DEPT' && (
+                <div className="hover-info border p-4 rounded-lg">
+                  <p>Dept is a global digital agency that combines technology, marketing, and creativity to build end-to-end digital products, services, and campaigns for brands.</p>
+                </div>
+              )}
+            </div>
+            <br />
             <div
               className="relative"
               onMouseEnter={() => handleMouseEnter('ACT Responsible')}

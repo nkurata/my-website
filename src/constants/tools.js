@@ -5,7 +5,7 @@ export const tools = [
   { id: 4, title: 'GitHub', image: 'https://cdn.worldvectorlogo.com/logos/github-icon-2.svg' },
   { id: 5, title: 'Docker', image: 'https://img.icons8.com/fluent/512/docker.png' },
   { id: 6, title: 'Linux', image: 'https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg' },
-  { id: 9, title: 'WSL 2', image: 'https://upload.wikimedia.org/wikipedia/commons/4/49/Windows_Subsystem_for_Linux_logo.png' },
+  { id: 9, title: 'Office 365', image: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/Microsoft_Office_logo_%282013%E2%80%932019%29.svg' },
   { id: 10, title: 'DBngin', image: 'https://dbngin.com/resources/images/logo.png' },
   { id: 7, title: 'Figma', image: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg' },
   { id: 8, title: 'Adobe Creative Cloud', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Adobe_Creative_Cloud_rainbow_icon.svg/2101px-Adobe_Creative_Cloud_rainbow_icon.svg.png'},

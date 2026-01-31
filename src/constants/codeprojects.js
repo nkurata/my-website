@@ -1,15 +1,16 @@
 export  const projects = [
   {
     title: "Dissonance",
-    description: "A software that protects audio files from unauthorized AI training using adversarial perturbations—imperceptible to humans, disruptive to AI.",
+    description: "A software that protects audio files from unauthorized AI training using adversarial perturbations imperceptible to humans, disruptive to AI.",
     skills: ["Audio Security", "C++ Development", "Adversarial Machine Learning", "UI Prototyping"],
-    tech: ["C++", "Python", "Django", "React"],
+    tech: ["C++", "Python", "React"],
     repoLink: 'https://github.com/Dissonance-Eip',
     date: "March 2025 - June 2027",
+    context: "Epitech Innovative Project",
   },
   {
     title: "Personal Portfolio",
-    description: "This very website your on! A personal portfolio website showcasing my projects and skills.",
+    description: "This very website you're on! A personal portfolio website showcasing my projects and skills.",
     skills: ["Web Development", "UI Design"],
     tech: ["React", "TailwindCSS", "JavaScript"],
     repoLink: 'https://github.com/nkurata/my-website',

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import NavBar from '../components/NavBar.jsx';
 import Slider from 'react-slick';
 import '../styles/CodePage.css';
@@ -19,6 +19,34 @@ const CodePage = () => {
   const navHidden = useNavBarVisibility();
   const [selectedSkill, setSelectedSkill] = useState('');
   const [selectedTech, setSelectedTech] = useState('');
+  const sliderRef = useRef(null);
+  const lastSwipeTime = useRef(0);
+
+  useEffect(() => {
+    const handleWheel = (e) => {
+      const horizontal = Math.abs(e.deltaX);
+      const vertical = Math.abs(e.deltaY);
+      if (horizontal <= vertical || horizontal < 10) return;
+
+      const now = Date.now();
+      if (now - lastSwipeTime.current < 250) return;
+      lastSwipeTime.current = now;
+
+      e.preventDefault();
+      if (e.deltaX > 0) {
+        sliderRef.current?.slickNext();
+      } else {
+        sliderRef.current?.slickPrev();
+      }
+    };
+
+    const container = document.querySelector('.code-page-container');
+    container?.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => {
+      container?.removeEventListener('wheel', handleWheel);
+    };
+  }, []);
 
   const settings = {
     dots: true,
@@ -26,6 +54,9 @@ const CodePage = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
     centerMode: true,
     centerPadding: '0',
     responsive: [
@@ -82,7 +113,7 @@ const CodePage = () => {
             </div>
           </div>
           {filteredProjects.length > 1 ? (
-              <Slider {...settings}>
+              <Slider ref={sliderRef} {...settings}>
                 {filteredProjects.map((project, index) => (
                     <div key={index} className="card border rounded-lg p-4 shadow-lg">
                       <div className="card-content">

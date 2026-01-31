@@ -18,16 +18,16 @@ const HomePage = () => {
           <div className="intro">
             <h1 className="intro-title">Hi 👋, I'm Noé Kurata</h1>
             <h3 className="intro-subtitle">
-              <strong>Computer Science Student & Digital Designer</strong>
+              <strong>Computer Science Student & Digital Creator</strong>
             </h3>
           </div>
           <div className="about flex">
             <div className="about-content flex-1">
               <h1 className="about-title">About Me</h1>
               <ul className="about-text">
-                <li>I'm a Digital Designer passionate about technology and design.</li>
-                <li>I'm currently learning C++ Game Development.</li>
-                <li>And in my freetime learning Full-Stack Web Development.</li>
+                <li>I'm a Digital Creator passionate about technology and design.</li>
+                <li>I'm currently working at DEPT® as a Junior Data Engineer.</li>
+                <li>And in my freetime learning Arch Linux.</li>
                 <li>I desire to create impactful digital experiences.</li>
               </ul>
             </div>
